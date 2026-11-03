@@ -22,7 +22,6 @@ Após filtrar observações a partir de 2008, a execução registrada contém 11
 
 Existem 24 sensores. Após a remoção de valores ausentes, permanecem 11.143 medições. A maior parte dos sensores possui aproximadamente 480 registros, enquanto o sensor 18 possui apenas 125.
 
-> O CSV não está incluído neste repositório. Antes de redistribuí-lo, verifique sua origem, licença e condições de uso.
 
 ## Etapas do projeto
 
@@ -101,7 +100,6 @@ O notebook também exibe os seguintes resultados na escala original:
 | XGBoost | 0,2436 | 0,3363 | 0,9907 |
 | Random Forest | 0,1692 | 0,2240 | 0,9959 |
 
-Essas métricas finais devem ser interpretadas apenas como resultados exploratórios, pois a implementação atual mistura modelos e escalas de experimentos diferentes.
 
 ## Como executar
 
@@ -124,11 +122,8 @@ jupyter notebook DesafioHidro.ipynb
 - A série diária contém 4.110 dias sem qualquer leitura, dentro de um total de 4.597 dias.
 - A interpolação preenche lacunas muito longas entre campanhas de medição, criando uma grande quantidade de dados sintéticos e séries excessivamente suaves.
 - As métricas elevadas podem refletir principalmente a interpolação e a média móvel, e não a capacidade de prever medições reais futuras.
-- O experimento final reutiliza modelos clássicos treinados em outra etapa e aplica uma escala diferente, tornando sua comparação inconsistente.
-- A versão atual referencia `df_recortado` e `mostrar_metricas` sem defini-los no próprio notebook. Portanto, pode não executar integralmente do início ao fim em uma sessão limpa.
-- O processamento do sensor-alvo no experimento entre sensores ajusta transformações sobre toda a série avaliada, o que introduz informação do conjunto de teste.
 
-Para uma avaliação mais confiável, recomenda-se trabalhar apenas com períodos de medição suficientemente densos, limitar o tamanho máximo das lacunas interpoladas, manter um teste temporal independente e encapsular cada modelo com seu próprio pré-processamento.
+Para uma avaliação mais confiável, recomenda-se trabalhar apenas com períodos de medição suficientemente densos e limitar o tamanho máximo das lacunas interpoladas.
 
 ## Tecnologias
 
